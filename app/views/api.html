@@ -1,0 +1,22 @@
+
+<div class="well well-lg" ng-repeat="repo in repos">
+  <h3 class="panel-title">Publish an Artifact</h3>
+  <br />
+
+  <pre>
+	curl -i -F "artifact=@./puppetlabs-stdlib-4.5.1.tar.gz" localhost:8080/api/repo/puppetlabs/stdlib
+
+  </pre>
+
+</div>
+
+<div class="well well-lg" ng-repeat="repo in repos">
+  <h3 class="panel-title">List all Artifact</h3>
+  <br />
+
+  <pre>
+	curl -i localhost:8080/api/repo/puppetlabs/stdlib
+
+  </pre>
+
+</div>

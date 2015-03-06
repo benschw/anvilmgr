@@ -15,7 +15,8 @@ test:
 	go test ./...
 
 web:
-	/home/ben/go/bin/go-bindata dist/...
+	grunt build
+	${GOPATH}/bin/go-bindata dist/...
 
 build: web
 	mkdir -p build

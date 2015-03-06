@@ -2,14 +2,14 @@
 console.log('loaded');
 /**
  * @ngdoc overview
- * @name satisApp
+ * @name anvilmgrApp
  * @description
  * # satisApp
  *
  * Main module of the application.
  */
 angular
-  .module('satisApp', [
+  .module('anvilmgrApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'ui.router',
     'ui.bootstrap',
-    'satis.home'
+    'anvilmgr.home',
+    'anvilmgr.api'
   ])
   .run(['$rootScope', '$state', '$stateParams',
     function ($rootScope, $state, $stateParams) {
