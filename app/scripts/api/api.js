@@ -2,31 +2,34 @@
 
 angular
   .module('anvilmgr.api', [
-    'ngResource',
+    // 'ngResource',
     'ngRoute',
     'ui.router'
   ])
   .config(['$stateProvider', function($stateProvider) {
 
-      var home = {
+      var api = {
           name: 'app.api',
           url: '/docs',
           views: {
             '@': {
               templateUrl: 'views/api.html',
-              controller: 'ApiController'
+              controller: function(){
+                console.log('docs controller')
+              }
+              // controller: 'ApiController'
             }
           }
       };
 
-      $stateProvider.state(home);
-
-  }])
-  .controller('ApiController', ['$scope', '$resource', function ($scope, $resource) {
-
-
-
-
+      $stateProvider.state(api);
 
   }]);
+  // .controller('ApiController', ['$scope', '$resource', function ($scope, $resource) {
+
+
+
+
+
+  // }]);
 

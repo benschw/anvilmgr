@@ -21,14 +21,13 @@ web:
 	${GOPATH}/bin/go-bindata dist/...
 
 server:
+	mkdir -p build
 	go build -o build/anvilmgr
 
 build: web server
-	cp anvilmgr.init build/init/anvilmgr
-	mkdir -p build
 
 
-run: deps clean test build
+run: build
 	./build/anvilmgr serve
 
 

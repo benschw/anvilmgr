@@ -27,9 +27,7 @@ angular
 
     var Repos = $resource('/api/repo');
 
-    $scope.repos = Repos.query(function() {
-
-    });
+    $scope.repos = Repos.query();
 
   }]);
 
