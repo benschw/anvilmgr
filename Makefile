@@ -10,21 +10,20 @@ clean:
 
 deps:
 	go get github.com/jteeuwen/go-bindata/...
-	go get github.com/elazarl/go-bindata-assetfs/...
 	go get -t -v ./...
 
 test:
 	go test ./...
 
-web:
+web-build:
 	grunt build
 	${GOPATH}/bin/go-bindata dist/...
 
-server:
+server-build:
 	mkdir -p build
 	go build -o build/anvilmgr
 
-build: web server
+build: web-build server-build
 
 
 run: build
@@ -39,10 +38,14 @@ install:
 deb:
 	mkdir -p build/root/usr/bin
 	mkdir -p build/root/etc/init.d
+	mkdir -p build/root/etc/anvilmgr
 	mkdir -p build/root/var/lib/puppet-anvil/modules
 	mkdir -p build/root/var/log/anvilmgr
+	
 	cp build/anvilmgr build/root/usr/bin/anvilmgr
 	cp anvilmgr.init build/root/etc/init.d/anvilmgr
+	cp anvilmgr.yaml build/root/etc/anvilmgr/anvilmgr.yaml
+
 	fpm -s dir -t deb -n anvilmgr -v $(VERSION) -p build/anvilmgr-amd64.deb \
 		--deb-priority optional \
 		--category util \
