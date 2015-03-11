@@ -3,7 +3,7 @@ package anvilrepo
 import (
 	"errors"
 	"fmt"
-	"github.com/benschw/anvil-mgr/anvilrepo/api"
+	"git.bvops.net/scm/auto/anvilmgr.git/anvilrepo/api"
 	"io"
 	"io/ioutil"
 	"log"

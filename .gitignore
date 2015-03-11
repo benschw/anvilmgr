@@ -1,14 +1,13 @@
 repo
 cli
 build
-bindata.go
 
 
-node_modules
-dist
-.tmp
-.sass-cache
-bower_components
+webapp/node_modules
+webapp/dist
+webapp/.tmp
+webapp/.sass-cache
+webapp/bower_components
 
 
 puppetlabs-stdlib-4.5.1.tar.gz

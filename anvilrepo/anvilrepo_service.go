@@ -3,7 +3,6 @@ package anvilrepo
 import (
 	"github.com/gorilla/mux"
 	"log"
-	//	"github.com/GeertJohan/go.rice"
 	"net/http"
 )
 

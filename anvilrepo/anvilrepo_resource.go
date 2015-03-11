@@ -43,7 +43,7 @@ func (r *AnvilArtifactResource) AddArtifact(res http.ResponseWriter, req *http.R
 		return
 	}
 
-	location := fmt.Sprintf("api/repo/%s/%s/%s", artifact.Id)
+	location := fmt.Sprintf("api/repo/%s", artifact.Id)
 	if err := rest.SetCreatedResponse(res, artifact, location); err != nil {
 		rest.SetInternalServerErrorResponse(res, err)
 		return

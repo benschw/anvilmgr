@@ -5,35 +5,49 @@ ITTERATION := $(shell date +%s)
 default: build
 
 clean:
+	rm puppetlabs-stdlib-4.5.1.tar.gz
+	rm bindata.go
 	rm -rf build
 	rm -rf repo
+	rm -rf webapp/node_modules
+	rm -rf webapp/dist
+	rm -rf webapp/bower_components
 
-deps:
-	go get github.com/jteeuwen/go-bindata/...
-	go get -t -v ./...
+deps-web:
+	cd webapp; \
+	npm install; \
+	bower install
+
+deps-server:
+	go get -u github.com/jteeuwen/go-bindata/...
+	go get -u -t -v ./...
+	# just for test
+	wget -q https://forgeapi.puppetlabs.com/v3/files/puppetlabs-stdlib-4.5.1.tar.gz -O puppetlabs-stdlib-4.5.1.tar.gz
+
+deps: deps-web deps-server
+
+
 
 test:
 	go test ./...
 
-web-build:
+build-web:
+	cd webapp; \
 	grunt build
-	${GOPATH}/bin/go-bindata dist/...
 
-server-build:
+build-bindata:
+	${GOPATH}/bin/go-bindata webapp/dist/...
+
+build-server:
 	mkdir -p build
 	go build -o build/anvilmgr
 
-build: web-build server-build
+
+build: build-web build-bindata build-server
 
 
-run: build
-	./build/anvilmgr serve
-
-
-
-install:
-	install -t /usr/bin build/anvilmgr
-	install -t /etc/init.d build/init/anvilmgr
+run:
+	./build/anvilmgr -config ./anvilmgr.yaml serve
 
 deb:
 	mkdir -p build/root/usr/bin

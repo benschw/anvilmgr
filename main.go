@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/benschw/anvil-mgr/anvilrepo"
+	"git.bvops.net/scm/auto/anvilmgr.git/anvilrepo"
 	"github.com/benschw/opin-go/config"
 	"github.com/elazarl/go-bindata-assetfs"
 	"log"

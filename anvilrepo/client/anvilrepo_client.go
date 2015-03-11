@@ -3,7 +3,7 @@ package client
 import (
 	"bytes"
 	"fmt"
-	"github.com/benschw/anvil-mgr/anvilrepo/api"
+	"git.bvops.net/scm/auto/anvilmgr.git/anvilrepo/api"
 	"github.com/benschw/opin-go/rest"
 	"io"
 	"log"
