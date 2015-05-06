@@ -3,11 +3,11 @@ package main
 import (
 	"flag"
 	"fmt"
-	"git.bvops.net/scm/auto/anvilmgr.git/anvilrepo"
-	"github.com/benschw/opin-go/config"
-	"github.com/elazarl/go-bindata-assetfs"
 	"log"
 	"os"
+
+	"github.com/benschw/anvilmgr/anvilrepo"
+	"github.com/benschw/opin-go/config"
 )
 
 func main() {

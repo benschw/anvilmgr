@@ -3,14 +3,15 @@ package client
 import (
 	"bytes"
 	"fmt"
-	"git.bvops.net/scm/auto/anvilmgr.git/anvilrepo/api"
-	"github.com/benschw/opin-go/rest"
 	"io"
 	"log"
 	"mime/multipart"
 	"net/http"
 	"os"
 	"path/filepath"
+
+	"github.com/benschw/anvilmgr/anvilrepo/api"
+	"github.com/benschw/opin-go/rest"
 )
 
 var _ = log.Print

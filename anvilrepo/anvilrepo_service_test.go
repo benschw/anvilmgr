@@ -2,14 +2,14 @@ package anvilrepo
 
 import (
 	"fmt"
-	"git.bvops.net/scm/auto/anvilmgr.git/anvilrepo/api"
-	"git.bvops.net/scm/auto/anvilmgr.git/anvilrepo/client"
-	"github.com/benschw/opin-go/rando"
-	"github.com/elazarl/go-bindata-assetfs"
-	. "gopkg.in/check.v1"
 	"io/ioutil"
 	"log"
 	"syscall"
+
+	"github.com/benschw/anvilmgr/anvilrepo/api"
+	"github.com/benschw/anvilmgr/anvilrepo/client"
+	"github.com/benschw/opin-go/rando"
+	. "gopkg.in/check.v1"
 )
 
 var _ = fmt.Print

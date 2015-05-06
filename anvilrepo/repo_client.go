@@ -3,13 +3,14 @@ package anvilrepo
 import (
 	"errors"
 	"fmt"
-	"git.bvops.net/scm/auto/anvilmgr.git/anvilrepo/api"
 	"io"
 	"io/ioutil"
 	"log"
 	"mime/multipart"
 	"os"
 	"strings"
+
+	"github.com/benschw/anvilmgr/anvilrepo/api"
 )
 
 var _ = log.Print
